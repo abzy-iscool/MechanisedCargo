@@ -1,0 +1,88 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Mechanised Services | Contact us"
+			description="Get in touch for business ventures"
+		/>
+		<style>
+			.grid {
+				display: grid;
+				grid-gap: 3rem;
+				padding: 10%;
+			}
+			.title {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+			}
+            .box{
+                display: flex;
+				align-content: center;
+				justify-content: center;
+                padding: 10%;
+                background-color: black;
+				text-align: center;
+            }
+			#form-title{
+				color: white;
+			}
+			#email-field {
+				height: 40px;
+				width: 100%;
+				border-color: black;
+				background-color: white;
+				color: black;
+				font-weight: 500;
+				font-size: var(--f-d1);
+			}
+			#message-field{
+				height: 150px;
+				width: 100%;
+				border-color: black;
+				background-color: white;
+				color: black;
+				font-weight: 500;
+				font-size: var(--f-d1);
+
+			}
+			#submit-button {
+				height: 40px;
+				width: 100%;
+				border-radius: 10px;
+				background-color: #ff8b01;
+				font-weight: 600;
+				font-size: var(--f-u1);
+			}
+			#submit-button:hover {
+				background-color: #f03801;
+				-moz-transition: all 0.2s ease-in;
+				-o-transition: all 0.2s ease-in;
+				-webkit-transition: all 0.2s ease-in;
+				transition: all 0.2s ease-in;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1 class="title">Lets <strong style="color: red;">Collaborate</strong> </h1>
+			<div class="grid">
+                <div class="box">
+					<form name="contact" method="POST" data-netlify="true" >
+						<h1 id="form-title">Contact Us</h1>
+						<input required name="email" type="email" id="email-field" placeholder="Email address" />
+						<textarea class="text" name="message" id="message-field"></textarea>
+						<button type="submit" id="submit-button">send</button>
+					</form>
+                </div>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,89 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<html lang="en">
+	<head>
+		<MainHead title="About | Mechanised" description="About Mechanised Cargo Systems LTD"/>
+		<style>
+			.heroImg {
+				max-height: 24rem;
+				object-fit: cover;
+				overflow: hidden;
+			}
+
+			.heroImg img {
+				width: 100%;
+			}
+
+			.bio {
+				font-size: var(--f-u1);
+				line-height: 2;
+				margin-top: 4em;
+			}
+
+			.wrapper.bio {
+				max-width: 50em;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1>Who <strong style="color: red;">We</strong> Are</h1>
+			<div class="heroImg">
+				<img
+					width="1400"
+					height="350"
+					src="https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=767&q=80"
+				/>
+			</div>
+			<div class="bio wrapper">
+				<p>
+					MECHANISED CARGO SYSTEMS (T) LTD was established in 1993 operating in the name of F &
+					P Express Services Ltd and from very humble beginnings has grown to become a force to reckon
+					with among independent customs brokerage and international freight forwarding companies. Since
+					1993 we have steadily expanded our organization and clientele to become one of
+					Dar es Salaam's leading customs clearance and freight forwarding companies.
+				</p>
+
+				<p>
+					Our expansion program has seen us set a fully staffed and equipped cargo handling systems.
+					The smooth handling of Airfreight through our main Airport and the Sea Port.
+				</p>
+
+				<p>
+					By the end of 2002, we changed the name to Mechanised Cargo Systems (T) Ltd to be in line with
+					our associate’s offices in Nairobi & Mombasa. In 2003 Jan, we opened our Zanzibar office to handle
+					Air and Sea shipments arriving via Zanzibar. And possibly spread into Uganda in the very near
+					future.
+				</p>
+
+				<p>
+					The extent of services and facilities provided by MECHANISED include import/export services by
+					Air/Ocean, customs brokerage, break bulk, long and short haulage transport system for both
+					containerized and loose cargo. We are very Strong Operationally at the DJNIA-Airport as we started
+					our first office here more than 17 years ago. At this moment we have excellent relationships with
+					the Customs, Airport Authority, Swiss port and other stakeholders, and are able to rapidly facilitate
+					any required Operation immediately.
+				</p>
+
+				<p>
+					Our strength lies in our total flexibility and ability to adapt to the rapidly changing Economic climate.
+					This coupled with our long standing reputation for high quality service and communication,
+					underscores why MECHANISED has been so successful over many years enabling it to reach where
+					it now stands.
+				</p>
+
+				<p>
+					We will welcome any enquiries and will offer free ADVISORY SERVICES in this field as has always
+					been our custom. We guarantee you our PERSONALIZED attention professionally.
+					MECHANISED CARGO SYSTEMS gives you solution to all your Logistics needs.
+				</p>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,115 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+	<p id="footer-title">
+		A MEMBER OF 
+		<a href="https://www.wf-group.com/" target="blank" style="animation: header-animation ease-in-out 5s infinite alternate;">
+			WORLD FREIGHT GROUP
+		</a>
+	</p>
+
+	<div class="socials">
+		<a class="social" href="https://twitter.com">
+			<img src="/public/assets/twitter.png" 
+			alt="" 
+			srcset=""
+			width="20"
+			height="20"
+			>
+		</a>
+		<a class="social" href="https://www.facebook.com/">
+			
+			<img src="/public/assets/facebook.png" 
+			alt="" 
+			srcset=""
+			width="20"
+			height="20"
+			>
+			
+		</a>
+		<a class="social" href="https://tz.linkedin.com/">
+			<img src="/public/assets/linkedin.png" 
+			alt="" 
+			srcset=""
+			width="20"
+			height="20"
+			>
+		</a>
+	</div>
+
+	<a class="link" href="/contact"> Contact</a>
+	&nbsp;
+	<a class="link" href="/blogs"> Blogs</a>
+
+	<div id="copyright">
+		&copy; {currentYear} Mechanised Cargo Systems
+	</div>
+</footer>
+
+<style>
+	.socials {
+		display: flex;
+  		justify-content: center;
+  		align-items: center;
+		padding: 10px;
+		gap: 0.75em;
+		margin-right: auto;
+	}
+
+	.social {
+		display: block;
+	}
+
+	footer {
+		text-align: center;
+		padding-top: 8rem;
+		padding-right: 2rem;
+		padding-bottom: 4rem;
+		padding-left: 2rem;
+	}
+
+	.byline {
+		display: block;
+		margin-top: 1rem;
+		color: var(--t-subdue);
+		font-size: var(--f-d2);
+		text-transform: uppercase;
+	}
+	
+	/* Nav Items */
+	.link {
+		color: red;
+		text-decoration: none;
+		font-size: var(--f-u1);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.link:hover,
+	.link:focus {
+		color: orangered;
+	}
+
+	#footer-title{
+		font-weight: 800;
+		font-size: var(--f-u4);
+	}
+
+	@keyframes header-animation {
+		0% {
+			color: orange;
+		}
+		50%{
+			color: orangered;
+		}
+		100%{
+			color: red;
+		}
+	}
+
+	#copyright{
+		padding: 1%;
+	}
+</style>

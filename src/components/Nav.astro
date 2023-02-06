@@ -1,0 +1,50 @@
+<nav>
+	<a class="link" href="/">
+		<div class="monogram" style="color:red;">MCS</div>
+	</a>
+	<a class="link" href="/about/"> About</a>
+	<a class="link" href="/services/"> Services</a>
+	<a class="link" href="/customers/"> Customers</a>
+
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		justify-content: left;
+		padding: 1rem;
+	}
+
+	.link {
+		color: red;
+		display: block;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: var(--f-d1);
+		text-transform: uppercase;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+	}
+
+	.link:hover,
+	.link:focus {
+		color: orangered;
+	}
+
+	.monogram {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3em;
+		height: 3em;
+		margin-right: 0.5rem;
+		color: var(--c-black);
+		font-weight: 900;
+		letter-spacing: -0.125rem;
+		border: 3px solid currentColor;
+		border-radius: 50%;
+	}
+
+</style>

@@ -1,0 +1,75 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import type { Services } from '../types';
+import ServicesPreview from '../components/ServicesPreview.astro';
+
+const services = (await Astro.glob<Services>('./service/**/*.md'))
+	.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort(
+		(a, b) =>
+			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+	);
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Mechanised Services | What we Offer"
+			description="Learn about what services we do"
+		/>
+		<style>
+			.grid {
+				display: grid;
+				grid-gap: 3rem;
+			}
+			.title {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			#description{
+				background-color: black;
+			  	animation: header-animation ease-in-out 5s infinite alternate;
+				word-spacing: 10px;
+				font-weight: 900;
+				font-size: var(--f-u2);
+				padding: 3%;
+			}
+			@keyframes header-animation {
+				0% {
+					color: #ff8b01;
+				}
+				25% {
+					color: #fa6f01;
+				}
+				50% {
+					color: #f55301;
+				}
+				75% {
+					color: #f03801;
+				}
+				100% {
+					color: orangered;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1 class="title"> What <strong style="color: red;">We</strong> Do</h1>
+			<div class="grid">
+				{services.map((service) => <ServicesPreview service={service} />)}
+			</div>
+			<p id="description">
+				These are 6 ways in which Mechanised Cargo Systems in conjunction with its agents and network can be of
+				immediate benefit for you. They comprehensively cover every logistical aspect, thus giving you all solutions under
+				one umbrella. We are a Tanzanian Company working on International level, deeply Conscious of the “Time value of
+				Money” Talk to Mechanised for all your Cargo needs <a href="/contact/">contact us today for a quote. </a> 
+			</p>
+		</div>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,311 @@
+---
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import type { Project } from '../types';
+
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob<Project>('./project/**/*.md');
+const featuredProject = projects[0]!;
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Mechanised Cargo Systems LTD"
+			description="Logistics and Freight Forwarding Company"
+		/>
+		<style>
+			.wrapper {
+				margin-top: 2em;
+				margin-bottom: 2em;
+			}
+
+			.hero {
+				position: relative;
+				overflow: hidden;
+			}
+
+			@media (min-width: 750px) {
+				.hero {
+					height: 45vw;
+				}
+			}
+
+			.img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+
+			.gradient,
+			.gradient2 {
+				background-image: url('/assets/mesh-gradient.jpg');
+				background-size: cover;
+				pointer-events: none;
+				mix-blend-mode: screen;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
+			.gradient2 {
+				mix-blend-mode: multiply;
+				background-size: cover;
+			}
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				padding-left: 2rem;
+			}
+
+			@media (min-width: 750px) {
+				.overlay {
+					padding-left: 4rem;
+				}
+			}
+
+			.title {
+				font-weight: 900;
+				font-size: var(--f-u6);
+				margin-bottom: 0.5rem;
+				margin-top: 0;
+			}
+
+			@media (min-width: 750px) {
+				.title {
+					font-size: var(--f-u12);
+				}
+			}
+
+			.grid {
+				display: grid;
+				grid-gap: 2rem;
+			}
+
+			@media (min-width: 1200px) {
+				.grid {
+					grid-template-columns: 2fr 1fr;
+				}
+			}
+
+			.sectionTitle {
+				font-weight: 700;
+				font-size: var(--f-u8);
+				margin-top: 4rem;
+				margin-bottom: 2rem;
+			}
+
+			.roles {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+				font-size: var(--f-d1);
+			}
+
+			.role {
+				position: relative;
+				display: inline-block;
+				white-space: nowrap;
+				font-weight: 900;
+				color: var(--t-bg);
+				background-color: var(--t-fg);
+				padding: 0.25em 0.5em;
+				z-index: 2;
+			}
+
+			@media (min-width: 750px) {
+				.role {
+					font-size: var(--f-u3);
+				}
+			}
+
+			.role:nth-of-type(1) .invert {
+				background-color: var(--c-pink);
+			}
+
+			.role:nth-of-type(2) .invert {
+				background-color: var(--c-blue);
+			}
+
+			.role:nth-of-type(3) .invert {
+				background-color: var(--c-green);
+			}
+
+			.role:hover .invert {
+				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+			}
+
+			.invert {
+				position: absolute;
+				color: var(--t-fg);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+			}
+
+			.desc {
+				font-size: var(--f-u1);
+				margin-top: 1.5rem;
+				margin-bottom: 0;
+			}
+
+			.subtitle {
+				display: block;
+				font-weight: 400;
+				font-size: var(--f-d6);
+				letter-spacing: -0.0625em;
+			}
+
+			.bio {
+				line-height: 2;
+				margin-bottom: 2rem;
+			}
+
+			.bio > span:first-of-type {
+				line-height: 1;
+				margin-bottom: 0.5em;
+				display: block;
+				font-weight: 700;
+				font-size: var(--f-u4);
+			}
+			
+			.button{
+				color: red;
+				text-decoration: none;
+			}
+
+			.buttonContainer {
+				color: red;
+				text-align: center;
+				margin-top: 2em;
+			}
+
+			.button:hover{
+				color: black;
+				background-color: orangered;
+  				-moz-transition: all 0.2s ease-in;
+  				-o-transition: all 0.2s ease-in;
+  				-webkit-transition: all 0.2s ease-in;
+  				transition: all 0.2s ease-in;
+			}
+			.section3container{
+				display: grid;
+				align-items: center;
+				justify-content: center;
+				padding: 5%;
+				margin: 5%;
+				background-color: black;
+
+			}
+			#quote-title{
+				animation: header-animation ease-in-out 5s infinite alternate;
+			}
+			#quote-subtitle{
+				animation: header-animation ease-in-out 5s infinite alternate;
+				font-weight: 700;
+				font-size: var(--f-u3);
+			}
+			@keyframes header-animation {
+				0% {
+					color: #ff8b01;
+				}
+				25% {
+					color: #fa6f01;
+				}
+				50% {
+					color: #f55301;
+				}
+				75% {
+					color: #f03801;
+				}
+				100% {
+					color: orangered;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<header class="hero">
+			<img
+				width="1600"
+				height="1131"
+				class="img"
+				src="/public/assets/Mech_slide_1.JPG"
+				srcset="/public/assets/Mech_slide_1.JPG"
+				alt="mechanised gradient background hero image"
+				
+			/>
+			<div class="gradient"></div>
+			<div class="gradient2"></div>
+			<div class="overlay">
+				<h1 class="title">
+					<small class="subtitle">
+						Creativity is an import-export business.
+					</small>
+					Mechanised Cargo Systems
+				</h1>
+				<div class="roles">
+					<span class="role"> Freightage <span class="invert"> 🚚Transit</span></span>
+					<span class="role"> Clearing & Forwarding <span class="invert">📦 Containers</span></span>
+					<span class="role"> Logistics <span class="invert">🚢 goods</span></span>
+				</div>
+				<p class="desc">Trucks, Trailers, Agents And Containers</p>
+			</div>
+		</header>
+			
+		<main class="wrapper">
+			<div class="grid">
+				<div class="section">
+					<h3 class="sectionTitle"><strong style="color: red;">Our</strong> Work</h3>
+					<PortfolioPreview project={featuredProject} />
+					<div class="buttonContainer">
+						<a href="/blogs/" class="button">View All</a>
+					</div>
+				</div>
+				<div class="section">
+					<h3 class="sectionTitle">About <strong style="color: red;">Us</strong></h3>
+					<p class="bio">
+						<span>Welcome</span> Established in 1993 operating in the name of F & P Express Services Ltd and from very humble beginnings has grown to become a force to reckon with among independent customs brokerage and international freight forwarding companies. Since 1993 we have steadily expanded our organization and clientele to become one of Dar es Salaam’s leading customs clearance and freight forwarding companies.
+					</p>
+					<p>
+						<a href="/about" style="color: red;">Read more</a>
+					</p>
+				</div>
+			</div>
+		</main>
+		<div class="section3container">
+			<h1 id="quote-title">Our Philosophy</h1>
+			<p id="quote-subtitle">
+				The reality about transportation is that it's future oriented, if we were planning for what we have were behind the curve.
+			</p>
+		</div>
+		<Footer />
+	</body>
+</html>

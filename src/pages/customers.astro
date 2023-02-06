@@ -1,0 +1,78 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import type { Clients  } from '../types';
+import CustomersCardPreview from '../components/CustomersCardPreview.astro';
+
+const clients = (await Astro.glob<Clients>('./client/**/*.md'))
+	.filter(({ frontmatter }) => !!frontmatter.publishDate)
+	.sort(
+		(a, b) =>
+			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
+	);
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="Mechanised Services | What we Offer"
+			description="Learn about what services we do"
+		/>
+		<style>
+			.grid {
+				display: grid;
+				grid-gap: 3rem;
+			}
+			.title {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+			}
+
+			#description{
+				background-color: black;
+			  	animation: header-animation ease-in-out 5s infinite alternate;
+				word-spacing: 10px;
+				font-weight: 900;
+				font-size: var(--f-u2);
+				padding: 3%;
+			}
+			@keyframes header-animation {
+				0% {
+					color: #ff8b01;
+				}
+				25% {
+					color: #fa6f01;
+				}
+				50% {
+					color: #f55301;
+				}
+				75% {
+					color: #f03801;
+				}
+				100% {
+					color: orangered;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1 class="title"> <strong style="color: red;">Our</strong> Customers</h1>
+			<div class="grid">
+				{clients.map((client) => <CustomersCardPreview client={client} />)}
+			</div>	
+			<p id="description">
+				30 Years of business operations with our clients we wouldn't want it any other way 
+				from clearing and fowarding to transit across the east african borders along the land-locked coastline 
+				our prefered choice of virtues will always be head of time nothing short of precision and compitence
+				along with our relationships with already existing clients we are always open and motivated to make and 
+				maintain new ones we welcome all inquires and quotes no cargo is too small nor is any of it too big 
+				Mechanised Cargo Systems would like to welcome all forms of business with any range of flexibility
+				<a href="/contact/">get a quote with us today.</a>
+			</p>
+		</div>
+		<Footer />
+	</body>
+</html>
