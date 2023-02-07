@@ -8,7 +8,6 @@ description: |
     Testemony to 30 years of operational status with our loyal customers
 tags:
   - Blog
-  - Transport
   - Customers
   - Logistics
 ---
