@@ -1,4 +1,4 @@
-- Astro Site 
+Logistics site built with Astro and Netlify 
 
 
 ## 🧞 Commands
