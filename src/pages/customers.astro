@@ -31,35 +31,19 @@ const clients = (await Astro.glob<Clients>('./client/**/*.md'))
 
 			#description{
 				background-color: black;
-			  	animation: header-animation ease-in-out 5s infinite alternate;
+				color: white;
 				word-spacing: 10px;
 				font-weight: 900;
 				font-size: var(--f-u2);
 				padding: 3%;
-			}
-			@keyframes header-animation {
-				0% {
-					color: #ff8b01;
-				}
-				25% {
-					color: #fa6f01;
-				}
-				50% {
-					color: #f55301;
-				}
-				75% {
-					color: #f03801;
-				}
-				100% {
-					color: orangered;
-				}
+				box-shadow:20px 20px #f15946;
 			}
 		</style>
 	</head>
 	<body>
 		<Nav />
 		<div class="wrapper">
-			<h1 class="title"> <strong style="color: red;">Our</strong> Customers</h1>
+			<h1 class="title"><strong style="color: red;">Our</strong> Customers</h1>
 			<div class="grid">
 				{clients.map((client) => <CustomersCardPreview client={client} />)}
 			</div>	
