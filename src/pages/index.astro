@@ -3,12 +3,12 @@
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import type { Project } from '../types';
+import type { Services } from '../types';
+import ServicesPreview from '../components/ServicesPreview.astro';
 
 // Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob<Project>('./project/**/*.md');
-const featuredProject = projects[0]!;
+const services = await Astro.glob<Services>('./service/**/*.md');
+const featuredService = services[0]!;
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -17,7 +17,7 @@ const featuredProject = projects[0]!;
 <html lang="en">
 	<head>
 		<MainHead
-			title="Mechanised Cargo Systems LTD"
+			title="Mechanised Cargo Systems (T) LTD"
 			description="Logistics and Freight Forwarding Company"
 		/>
 		<style>
@@ -214,41 +214,26 @@ const featuredProject = projects[0]!;
   				-webkit-transition: all 0.2s ease-in;
   				transition: all 0.2s ease-in;
 			}
+
 			.section3container{
 				display: grid;
 				align-items: center;
 				justify-content: center;
 				padding: 5%;
 				margin: 5%;
-				background-color: black;
+				background-color: #0c090d;
+				box-shadow: 10px 10px #e01a4f, 15px 15px #f15946, 20px 20px #f9c22e;
+			}
 
-			}
 			#quote-title{
-				animation: header-animation ease-in-out 5s infinite alternate;
+				color:  White;
 			}
+
 			#quote-subtitle{
-				animation: header-animation ease-in-out 5s infinite alternate;
+				color: white;
 				font-weight: 700;
 				font-size: var(--f-u3);
 			}
-			@keyframes header-animation {
-				0% {
-					color: #ff8b01;
-				}
-				25% {
-					color: #fa6f01;
-				}
-				50% {
-					color: #f55301;
-				}
-				75% {
-					color: #f03801;
-				}
-				100% {
-					color: orangered;
-				}
-			}
-			
 		</style>
 	</head>
 	<body>
@@ -276,7 +261,7 @@ const featuredProject = projects[0]!;
 			<div class="grid">
 				<div class="section">
 					<h3 class="sectionTitle"><strong style="color: red;">Our</strong> Work</h3>
-					<PortfolioPreview project={featuredProject} />
+					<ServicesPreview service={featuredService} />
 					<div class="buttonContainer">
 						<a href="/blogs/" class="button">View All</a>
 					</div>
