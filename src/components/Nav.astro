@@ -1,6 +1,6 @@
 <nav>
 	<a class="link" href="/">
-		<div class="monogram" style="color:red;">MCS</div>
+		<div class="monogram">MCS</div>
 	</a>
 	<a class="link" href="/about/"> About</a>
 	<a class="link" href="/services/"> Services</a>
@@ -40,11 +40,20 @@
 		width: 3em;
 		height: 3em;
 		margin-right: 0.5rem;
-		color: var(--c-black);
+		color: red;
 		font-weight: 900;
 		letter-spacing: -0.125rem;
 		border: 3px solid currentColor;
 		border-radius: 50%;
+		background-color: var(--t-fg);
+	}
+	.monogram:hover{
+		color: var(--t-fg);
+		background-color: red;
+		-moz-transition: all 0.2s ease-in-out;
+  			-o-transition: all 0.2s ease-in-out;
+  			-webkit-transition: all 0.2s ease-in-out;
+  			transition: all 0.2s ease-in-out;
 	}
 
 </style>
