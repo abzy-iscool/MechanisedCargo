@@ -6,12 +6,12 @@ import Nav from '../components/Nav.astro';
 
 <html lang="en">
 	<head>
-		<MainHead title="About | Mechanised" description="About Mechanised Cargo Systems LTD"/>
+		<MainHead title="About | Mechanised Cargo Systems" description="Learn who we were And what we became"/>
 		<style>
 			.heroImg {
 				max-height: 24rem;
 				object-fit: cover;
-				overflow: hidden;
+				overflow:visible;			
 			}
 
 			.heroImg img {
@@ -21,7 +21,19 @@ import Nav from '../components/Nav.astro';
 			.bio {
 				font-size: var(--f-u1);
 				line-height: 2;
-				margin-top: 4em;
+				margin-top: 10em;
+			}
+
+			@media (max-width: 912px) {
+				.bio {
+					margin-top: 1em;
+				}
+			}
+
+			@media (max-width: 414px) {
+				.bio {
+					margin-top: 1em;
+				}
 			}
 
 			.wrapper.bio {
@@ -35,9 +47,9 @@ import Nav from '../components/Nav.astro';
 			<h1>Who <strong style="color: red;">We</strong> Are</h1>
 			<div class="heroImg">
 				<img
-					width="1400"
-					height="350"
-					src="https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=767&q=80"
+					height="600"
+					width="1500"
+					src="/public/assets/banner-image.png"
 				/>
 			</div>
 			<div class="bio wrapper">
