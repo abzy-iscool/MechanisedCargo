@@ -17,7 +17,7 @@ const services = (await Astro.glob<Services>('./service/**/*.md'))
 	<head>
 		<MainHead
 			title="Mechanised Services | What we Offer"
-			description="Learn about what services we do"
+			description="Learn about what services we can do for you"
 		/>
 		<style>
 			.grid {
@@ -31,28 +31,12 @@ const services = (await Astro.glob<Services>('./service/**/*.md'))
 
 			#description{
 				background-color: black;
-			  	animation: header-animation ease-in-out 5s infinite alternate;
+				color: white;
 				word-spacing: 10px;
 				font-weight: 900;
 				font-size: var(--f-u2);
 				padding: 3%;
-			}
-			@keyframes header-animation {
-				0% {
-					color: #ff8b01;
-				}
-				25% {
-					color: #fa6f01;
-				}
-				50% {
-					color: #f55301;
-				}
-				75% {
-					color: #f03801;
-				}
-				100% {
-					color: orangered;
-				}
+				box-shadow: 20px 20px #e01a4f;
 			}
 		</style>
 	</head>
