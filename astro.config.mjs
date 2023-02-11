@@ -1,13 +1,12 @@
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
-import compressor from "astro-compressor";
-
-import netlify from '@astrojs/netlify/functions';
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-  integrations: [compressor()],
+  integrations: [compress()]
 });
