@@ -13,6 +13,6 @@
   "dependencies": {
     "@astrojs/netlify": "^2.1.1",
     "astro": "^2.0.4",
-    "astro-compressor": "^0.2.2"
+    "astro-compress": "^1.1.30"
   }
 }
