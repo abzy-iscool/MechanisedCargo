@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/serviceLayout.astro
-title: Customs Clearance
+title: Clearance
 client: Self
 publishDate: 2023-11-01 00:00:00
 img: 
 description: |
-    Goods Clearance
+    Centralised Clearance
 tags:
   - Service
 ---
