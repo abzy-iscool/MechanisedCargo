@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/customerLayout.astro
-title: Tanga Pharmaceutical & Plastics Ltd
+title: TPPL
 client: Self
 publishDate: 2023-11-01 00:00:00
 img: 
 description: |
-    Pharmaceutical products Company
+    Tanga Pharmaceutical & Plastics LTD
 tags:
   - Customer
 ---
