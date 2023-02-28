@@ -1,0 +1,36 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<html lang="en">
+	<head>
+		<MainHead title="Success" />
+		<style>
+			.wrapper {
+				display:grid;
+				justify-content: center;
+  				align-items: center;
+				margin-top: 5em;
+				margin-bottom: 2em;
+			}
+			.backdrop{
+				background-color: black;
+				color: white;
+				padding: 3%;
+				box-shadow:20px 20px yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<div class="backdrop">
+				<h1>Your Input Was Noted</h1>
+				<p>Thank you for reaching out to us!</p>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
