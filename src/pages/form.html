@@ -1,0 +1,89 @@
+<div class="wrapper">
+    <h1 class="title">Lets <strong style="color: red;">Collaborate</strong> </h1>
+    <div class="grid">
+        <div class="box">
+            <form method="post" name="Contact-Form" data-netlify="true" action="success" class="form-field">
+                <h1 id="form-title">Contact Us</h1>
+                    <p>
+                      <label>Name: <input type="text" name="name" id="name-field" /></label>
+                    </p>
+                    <p>
+                      <label>Email: <input type="email" name="email" id='email-field'/></label>
+                    </p>
+                    <p>
+                      <label>Message: <textarea name="message" id='message-field'></textarea></label>
+                    </p>
+                    <p>
+                      <button type="submit" id='submit-button'>Send</button>
+                    </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .grid {
+        display: grid;
+        grid-gap: 3rem;
+        padding: 10%;
+    }
+    .title {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .box{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding: 10%;
+        background-color: black;
+        color:white;
+        text-align: center;
+        box-shadow:20px 20px #f9c22e;
+    }
+    #form-title{
+        color:  white;
+    }
+    #name-field{
+        height: 40px;
+        width: 100%;
+        border-color: black;
+        background-color: white;
+        color: black;
+        font-weight: 500;
+        font-size: var(--f-d1);
+    }
+    #email-field {
+        height: 40px;
+        width: 100%;
+        border-color: black;
+        background-color: white;
+        color: black;
+        font-weight: 500;
+        font-size: var(--f-d1);
+    }
+    #message-field{
+        height: 80px;
+        width: 100%;
+        border-color: black;
+        background-color: white;
+        color: black;
+        font-weight: 500;
+        font-size: var(--f-u2);
+    }
+    #submit-button {
+        height: 40px;
+        width: 99%;
+        background-color: #f9c22e;
+        font-weight: 800;
+        font-size: var(--f-u1);
+    }
+    #submit-button:hover {
+        background-color: #ff8b01;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        border-radius: 10px;
+    }
+</style>
